@@ -8,7 +8,7 @@ function [X, T] = MaillageP1(a, b, h)
         X = a + h*(0:n-1)';
       
     [~, I] = sort(X);
-    disp(I);%disp(sort(X));
+    %disp(I);%disp(sort(X));
     T = [ I(1:n-1), I(2:n)]; 
 
 %Partie affichage

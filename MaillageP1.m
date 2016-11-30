@@ -13,8 +13,8 @@ function [X, T] = MaillageP1(a, b, h)
 
 %Partie affichage
 %
-    figure('name', sprintf('Representation du Maillage ( n = %d )', n) );
-    plot(X, zeros(1,n), 'b-o');
+%     figure('name', sprintf('Representation du Maillage ( n = %d )', n) );
+%     plot(X, zeros(1,n), 'b-o');
     for i = 1:size(X,1)
         text(X(i), 0.1, sprintf('X_{%d}', i), 'color', 'blue'); 
     end

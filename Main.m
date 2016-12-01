@@ -16,6 +16,7 @@ f=str2func(fu);
 %f=@(x)2*sin(x);
 [X, T] = MaillageP1(a, b, h);
 uex=ue(X);% exact points
+alpha=-alpha;
 [U] = EF_P1(alpha,beta,gamma,f,X,T);
 n = floor((b - a)/h) + 1;
 % Post-traitement

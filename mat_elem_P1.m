@@ -18,10 +18,18 @@ B=(x2-x1)/6*(phi1_P1(x1,x1,x2)*phi2_P1(x1,x1,x2)+4*phi1_P1(xm,x1,x2)*phi2_P1(xm,
 C=(x2-x1)/6*(phi2_P1(x1,x1,x2)^2+4*phi2_P1(xm,x1,x2)^2+phi2_P1(x2,x1,x2)^2);
 elemMi=beta*[A B;B C];
 % elemMi=beta*((x2-x1)/6)*[2 1;1 2];
-A=(x2-x1)/6*(d_phi1(x1,x1,x2)^2+4*d_phi1(xm,x1,x2)^2+d_phi1(x2,x1,x2)^2);
+% A=(x2-x1)/6*(d_phi1(x1,x1,x2)*phi1_P1(x1,x1,x2)+4*d_phi1(xm,x1,x2)^2+d_phi1(x2,x1,x2)*phi1_P1(x2,x1,x2));
+% B=(x2-x1)/6*(d_phi1(x1,x1,x2)*phi2_P1(x1,x1,x2)+4*d_phi1(xm,x1,x2)*phi2_P1(xm,x1,x2)+d_phi1(x2,x1,x2)*phi2_P1(x2,x1,x2));
+% D=(x2-x1)/6*(phi1_P1(x1,x1,x2)*phi2_P1(x1,x1,x2)+4*phi1_P1(xm,x1,x2)*phi2_P1(xm,x1,x2)+phi1_P1(x2,x1,x2)*phi2_P1(x2,x1,x2));
+% C=(x2-x1)/6*(phi2_P1(x1,x1,x2)^2+4*phi2_P1(xm,x1,x2)^2+phi2_P1(x2,x1,x2)^2);
+
+A=(x2-x1)/6*(phi1_P1(x1,x1,x2)*d_phi1(x1,x1,x2)+4*d_phi1(xm,x1,x2)*phi1_P1(xm,x1,x2)+d_phi1(x2,x1,x2)*phi1_P1(x2,x1,x2));
 B=(x2-x1)/6*(d_phi1(x1,x1,x2)*phi2_P1(x1,x1,x2)+4*d_phi1(xm,x1,x2)*phi2_P1(xm,x1,x2)+d_phi1(x2,x1,x2)*phi2_P1(x2,x1,x2));
-C=(x2-x1)/6*(phi2_P1(x1,x1,x2)^2+4*phi2_P1(xm,x1,x2)^2+phi2_P1(x2,x1,x2)^2);
+%C=(x2-x1)/6*(phi2_P1(x1,x1,x2)*phi1_P1(x1,x1,x2)+4*phi2_P1(xm,x1,x2)*phi1_P1(xm,x1,x2)+phi2_P1(x2,x1,x2)*phi1_P1(x2,x1,x2));
+C=(x2-x1)/6*(phi2_P1(x1,x1,x2)*phi2_P1(x1,x1,x2)+4*phi2_P1(xm,x1,x2)*phi2_P1(xm,x1,x2)+phi2_P1(x2,x1,x2)*phi2_P1(x2,x1,x2));
+
 elemGi=gamma*[A B;B C];
+
 elemi=elemMi+elemKi+elemGi;
 
 %elemKi=(alpha/(x2-x1))*[1  -1;-1   1];

@@ -21,7 +21,7 @@ n = floor((b - a)/h) + 1;
 % Post-traitement
 %%%%%%   comparaison graphique
 % figure('name', 'Comparaision: solutions exacte et approchée '); 
-% fplot(ue, [min(X), max(X)], 'b'); hold on; plot(X,U, 'r.-');
+ %fplot(ue, [min(X), max(X)], 'b'); hold on; plot(X,U, 'r.-');
 %%%%%%   Analyse d'erreur
 erreur=zeros(size(X,1),1);
 for i=1:size(X,1)
